@@ -201,9 +201,8 @@ module validity (clk, valid, pixel_valid, rst_n);
 								
 							else
 								counter <= counter + 1;
-
-							valid <= isValid;
 						end
+					valid <= isValid;
 				end
 		end 		
 endmodule
