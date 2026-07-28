@@ -1,4 +1,4 @@
-# conv-engine
+# convolution -engine
 
 **A parameterized hardware convolution engine — the multiply-accumulate core of a CNN layer, written in Verilog and verified in SystemVerilog.**
 
