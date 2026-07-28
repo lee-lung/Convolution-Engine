@@ -38,15 +38,15 @@ int main(void) {
   image[4][4] = 3;
 
   // kernel initialisation
-  kernel[0][0] = 1;
-  kernel[0][1] = 1;
-  kernel[0][2] = 1;
-  kernel[1][0] = 1;
-  kernel[1][1] = 1;
+  kernel[0][0] = 5;
+  kernel[0][1] = 6;
+  kernel[0][2] = 8;
+  kernel[1][0] = 3;
+  kernel[1][1] = 4;
   kernel[1][2] = 1;
-  kernel[2][0] = 1;
+  kernel[2][0] = 9;
   kernel[2][1] = 1;
-  kernel[2][2] = 1;
+  kernel[2][2] = 12;
 
   // convolution
   int outputSize = IMAGE_SIZE - KERNEL_SIZE + 1;

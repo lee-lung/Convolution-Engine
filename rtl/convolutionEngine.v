@@ -129,18 +129,30 @@ module mac (windowOut, macOut);
 	input wire[KERNEL_SIZE * KERNEL_SIZE * PIXEL_WIDTH - 1:0] windowOut;
 	output wire signed [MAC_WIDTH - 1:0] macOut;
 	reg signed [WEIGHT_WIDTH - 1:0] kernel[0:KERNEL_SIZE * KERNEL_SIZE - 1];
+	reg signed [WEIGHT_WIDTH - 1:0] kernelTemp[0:KERNEL_SIZE * KERNEL_SIZE - 1];
+
 	
 	initial
 		begin
-			kernel[0] = 1;
-			kernel[1] = 1;
-			kernel[2] = 1;
-			kernel[3] = 1;
-			kernel[4] = 1;
-			kernel[5] = 1;
-			kernel[6] = 1;
-			kernel[7] = 1;
-			kernel[8] = 1;
+			kernelTemp[0] = 5;
+			kernelTemp[1] = 6;
+			kernelTemp[2] = 8;
+			kernelTemp[3] = 3;
+			kernelTemp[4] = 4;
+			kernelTemp[5] = 1;
+			kernelTemp[6] = 9;
+			kernelTemp[7] = 1;
+			kernelTemp[8] = 12;
+			
+			kernel[0] = kernelTemp[2];
+			kernel[1] = kernelTemp[1];
+			kernel[2] = kernelTemp[0];
+			kernel[3] = kernelTemp[5];
+			kernel[4] = kernelTemp[4];
+			kernel[5] = kernelTemp[3];
+			kernel[6] = kernelTemp[8];
+			kernel[7] = kernelTemp[7];
+			kernel[8] = kernelTemp[6];
 		end
 	
 	integer i;
@@ -202,7 +214,7 @@ module validity (clk, valid, pixel_valid, rst_n);
 							else
 								counter <= counter + 1;
 						end
-					valid <= isValid;
+						valid <= isValid;
 				end
 		end 		
 endmodule
