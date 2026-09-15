@@ -14,7 +14,7 @@ endmodule
 bind validity sva_validity_reset sva_validity_reset_inst (.clk(clk),.rst_n(rst_n),.counter(counter), .valid(valid);
 
 
-module sva_linebuffer_pixel_valid #(parameter IMAGE_SIZE = 5) (input logic clk, input rst_n, input logic pixel_valid, input logic [7:0] shiftReg [0:IMAGE_SIZE - 1[);
+module sva_linebuffer_pixel_valid #(parameter IMAGE_SIZE = 5) (input l\zogic clk, input rst_n, input logic pixel_valid, input logic [7:0] shiftReg [0:IMAGE_SIZE - 1[);
 	
 	 property pixel_valid_gates_shiftreg;
         @(posedge clk) disable iff (!rst_n) (!pixel_valid) |-> $stable(shiftReg);
