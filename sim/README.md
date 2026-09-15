@@ -1,3 +1,4 @@
 # sim
 
-ModelSim `.do` run scripts and simulation notes.
+ModelSim `.do` run scripts, simulation notes, testbench
+

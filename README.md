@@ -1,4 +1,4 @@
-# conv-engine
+# Convolution engine
 
 **A parameterized hardware convolution engine — the multiply-accumulate core of a CNN layer, written in Verilog and verified in SystemVerilog.**
 
@@ -130,11 +130,11 @@ is used deliberately to expose transposition and indexing bugs that symmetric in
 
 - [x] C++ golden model (5×5 image, 3×3 kernel) — verified against hand calculation
 - [x] Bit-width and parameter decisions locked
-- [ ] Block-level I/O map (port-boundary granularity)
-- [ ] Line buffer module specification
-- [ ] RTL implementation — line buffers, window, MAC, `conv_top` FSM
-- [ ] SystemVerilog testbench with golden-model comparison
-- [ ] SVA assertions
+- [x] Block-level I/O map (port-boundary granularity)
+- [x] Line buffer module specification
+- [x] RTL implementation — line buffers, window, MAC, `conv_top` FSM
+- [x] SystemVerilog testbench with golden-model comparison
+- [x] SVA assertions
 - [ ] Functional coverage
 - [ ] Python regression harness + log parsing
 - [ ] Synthesis parameter sweep across kernel sizes
