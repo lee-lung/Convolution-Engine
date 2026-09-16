@@ -1,8 +1,8 @@
-//
 
-module sva_validity_reset #(parameter COUNT_SIZE = $clog2(25))(input logic clk, inpt logic rst_n, input logic [COUNT_SIZE - 1:0] counter, input logic valid);
 
-	property reset_cleared_on_release
+module sva_validity_reset #(parameter COUNT_SIZE = $clog2(25))(input logic clk, input logic rst_n, input logic [COUNT_SIZE - 1:0] counter, input logic valid);
+
+	property reset_cleared_on_release;
 		@(posedge clk) $rose(rst_n) |-> (counter == 0 && valid == 0);
 	endproperty
 	
@@ -11,10 +11,10 @@ module sva_validity_reset #(parameter COUNT_SIZE = $clog2(25))(input logic clk, 
 
 endmodule
 
-bind validity sva_validity_reset sva_validity_reset_inst (.clk(clk),.rst_n(rst_n),.counter(counter), .valid(valid);
+bind validity sva_validity_reset sva_validity_reset_inst (.clk(clk),.rst_n(rst_n),.counter(counter), .valid(valid));
 
 
-module sva_linebuffer_pixel_valid #(parameter IMAGE_SIZE = 5) (input l\zogic clk, input rst_n, input logic pixel_valid, input logic [7:0] shiftReg [0:IMAGE_SIZE - 1[);
+module sva_linebuffer_pixel_valid #(parameter IMAGE_SIZE = 5) (input logic clk, input rst_n, input logic pixel_valid, input logic [7:0] shiftReg [0:IMAGE_SIZE - 1]);
 	
 	 property pixel_valid_gates_shiftreg;
         @(posedge clk) disable iff (!rst_n) (!pixel_valid) |-> $stable(shiftReg);
